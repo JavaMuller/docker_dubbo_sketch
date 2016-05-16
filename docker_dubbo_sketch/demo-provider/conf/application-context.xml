@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:tx="http://www.springframework.org/schema/tx" 
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd  
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd             
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+    
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+    
+    <context:component-scan base-package="cn.sharetop.demo" />
+    
+    <bean id="appConfig" class="cn.sharetop.demo.provider.AppConfig" >
+    	<property name="language">
+    		<map>
+    			<entry key="zh" value="你好世界"/>
+    			<entry key="en" value="Hello world" />
+    			<entry key="fr" value="Bonjour le monde"/>
+    			<entry key="ja" value="こんにちは世界"/>
+    			<entry key="ko" value="안녕하세요, 세계"/>
+    		</map>
+    	</property>
+    </bean>
+   
+</beans>
